@@ -1,5 +1,3 @@
-https://nisha-siva07.github.io/mini-quiz-app/
-
 # 🧠 Mini Quiz App
 
 A responsive and interactive quiz app built with HTML, CSS, and JavaScript.
@@ -17,7 +15,6 @@ A responsive and interactive quiz app built with HTML, CSS, and JavaScript.
 ## 📂 Folder Structure
 - `index.html` – Login Page
 - `quiz.html` – Quiz Interface
-- `review.html` – Answer Review
 - `style.css` – Custom styles
 - `script.js` – Quiz logic
 - `questions.json` – External question file
