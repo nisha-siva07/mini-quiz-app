@@ -1,0 +1,310 @@
+/* ===========================
+   RESET & BASE
+=========================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: #f0f8ff;
+  color: #333;
+  padding: 20px;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* ===========================
+   INDEX PAGE (Login)
+=========================== */
+body.index-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(to bottom right, #f0f4f8, #d9e2ec);
+  flex-direction: column;
+  padding: 0;
+}
+
+.container {
+  text-align: center;
+  padding: 40px 30px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.container h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.container input[type="text"] {
+  padding: 12px 16px;
+  font-size: 16px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.container button {
+  padding: 14px 24px;
+  background: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.container button:hover {
+  background: #43a047;
+}
+
+body.dark .container {
+  background: transparent;
+}
+
+body.dark .container h2 {
+  color: #eaeaea;
+}
+
+body.dark .container input[type="text"] {
+  background: #444;
+  color: #fff;
+  border: 1px solid #666;
+}
+
+/* ===========================
+   CATEGORY SELECTION
+=========================== */
+.category-container {
+  max-width: 700px;
+  margin: auto;
+  padding: 40px 30px;
+  text-align: center;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.category-container h2 {
+  font-size: 22px;
+  margin-bottom: 25px;
+}
+
+.category-btn {
+  background: #8e44ad;
+  color: #fff;
+  padding: 14px 24px;
+  margin: 10px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 210px;
+  transition: background 0.3s ease;
+}
+
+.category-btn:hover {
+  background: #732d91;
+}
+
+/* ===========================
+   QUIZ CONTAINER
+=========================== */
+.quiz-container {
+  max-width: 700px;
+  margin: auto;
+  padding: 35px 30px;
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+#quiz-box > div:first-child {
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-size: 17px;
+}
+
+/* ===========================
+   OPTIONS
+=========================== */
+#options {
+  list-style: none;
+  margin-bottom: 20px;
+}
+
+.option-btn {
+  background: #3498db;
+  color: #fff;
+  padding: 14px 20px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  font-size: 16px;
+  transition: background 0.3s;
+}
+
+.option-btn:hover {
+  background: #2c80b4;
+}
+
+.option-btn.correct {
+  background-color: #2ecc71 !important;
+}
+
+.option-btn.wrong {
+  background-color: #e74c3c !important;
+}
+
+.option-btn.disabled {
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+/* ===========================
+   SCORE BOX
+=========================== */
+.score-container {
+  text-align: center;
+}
+
+#score-box button {
+  margin-top: 20px;
+  background: #27ae60;
+  color: #fff;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s;
+}
+
+#score-box button:hover {
+  background-color: #1e8449;
+}
+
+#score-box span {
+  font-weight: bold;
+}
+
+/* ===========================
+   REVIEW SECTION
+=========================== */
+.review-box {
+  margin-top: 30px;
+  text-align: left;
+  background: #f9f9f9;
+  border-radius: 10px;
+  padding: 20px;
+  max-height: 300px;
+  overflow-y: auto;
+  font-size: 15px;
+}
+
+.review-question {
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.review-question span.correct {
+  color: green;
+  font-weight: bold;
+}
+
+.review-question span.wrong {
+  color: red;
+  font-weight: bold;
+}
+
+/* ===========================
+   DARK MODE SUPPORT
+=========================== */
+body.dark {
+  background: #1e1e1e;
+  color: #eaeaea;
+}
+
+body.dark .quiz-container,
+body.dark .category-container,
+body.dark .score-container {
+  background: #2a2a2a;
+}
+
+body.dark .option-btn {
+  background: #444;
+}
+
+body.dark .option-btn.correct {
+  background-color: #27ae60 !important;
+}
+
+body.dark .option-btn.wrong {
+  background-color: #e74c3c !important;
+}
+
+body.dark .review-box {
+  background: #2d2d2d;
+}
+
+/* ===========================
+   TOP CONTROLS
+=========================== */
+.top-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.profile-info {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+#logout-btn {
+  padding: 8px 16px;
+  background: #ff5252;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.3s;
+}
+
+#logout-btn:hover {
+  background: #e53935;
+}
+
+/* ===========================
+   RESPONSIVE DESIGN
+=========================== */
+/* Responsive */
+@media screen and (max-width: 480px) {
+  .container {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .container input[type="text"] {
+    width: 100%;
+  }
+}

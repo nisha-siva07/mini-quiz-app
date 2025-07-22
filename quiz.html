@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mini Quiz Game</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Top Controls -->
+  <div class="top-controls">
+    <div class="profile-info">
+      <span id="user-name">👤 Welcome, Guest!</span>
+      <span id="user-score" style="margin-left: 10px;">🏆 Score: 0</span>
+    </div>
+    <div class="utility-controls">
+      <button id="sound-toggle" title="Toggle Sound">🔊</button>
+      <button id="dark-mode-toggle" title="Toggle Dark Mode">🌙</button>
+      <button id="logout-btn" title="Logout" style="background-color: #e74c3c; color: white;">🚪 Logout</button>
+    </div>
+  </div>
+
+  <!-- Category Selection -->
+  <div class="category-container" id="category-box">
+    <h2>Select a Category</h2>
+    <div class="category-buttons">
+      <button class="category-btn" data-category="General Knowledge">General Knowledge</button>
+      <button class="category-btn" data-category="Science">Science</button>
+      <button class="category-btn" data-category="History">History</button>
+      <button class="category-btn" data-category="Maths">Maths</button>
+      <button class="category-btn" data-category="Tamil">Tamil</button>
+      <button class="category-btn" data-category="Computer Science">Computer Science</button>
+    </div>
+  </div>
+
+  <!-- Quiz Box -->
+  <div class="quiz-container" id="quiz-box" style="display: none;">
+    <div id="progress">Question <span id="current-question">1</span> of <span id="total-questions">X</span></div>
+    <h2 id="question">Loading question...</h2>
+    <ul id="options"></ul>
+    <div id="timer">⏱️ Time Left: <span id="time">15</span> sec</div>
+    <div id="time-bar"><div id="bar"></div></div>
+  </div>
+
+  <!-- Score Box -->
+  <div class="score-container" id="score-box" style="display: none;">
+    <h2>🎉 Quiz Complete!</h2>
+    <p>Your Score: <span id="score"></span> / <span id="total"></span></p>
+    <div id="review-container" class="review-box"></div>
+    <button onclick="location.reload()" class="option-btn">🔁 Restart Quiz</button>
+  </div>
+
+  <!-- Sound Effects -->
+  <audio id="correct-sound" src="sounds/correct.mp3" preload="auto"></audio>
+  <audio id="wrong-sound" src="sounds/wrong.mp3" preload="auto"></audio>
+  <audio id="click-sound" src="sounds/click.mp3" preload="auto"></audio>
+
+  <!-- Initial Script (Reset Local Storage, Set Username, Logout Logic) -->
+  <script>
+    // ✅ Get username from localStorage or default
+    const username = localStorage.getItem('quiz_user') || 'Guest';
+    document.getElementById('user-name').textContent = `👤 Welcome, ${username}`;
+    document.getElementById('user-score').textContent = `🏆 Score: 0`;
+
+    // ✅ Reset score and answers on page load
+    localStorage.setItem('quiz_score', '0');
+    localStorage.removeItem('quiz_answers');
+    localStorage.removeItem('quiz_progress');
+
+    // ✅ Logout clears localStorage and redirects to login page
+    document.getElementById('logout-btn').addEventListener('click', () => {
+      localStorage.clear();
+      window.location.href = 'index.html';  // This must be your login page
+    });
+  </script>
+
+  <!-- Main Quiz Logic -->
+  <script src="script.js"></script>
+</body>
+</html>
