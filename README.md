@@ -9,7 +9,8 @@ A responsive and interactive quiz app built with HTML, CSS, and JavaScript.
 - Score summary & review
 - Sound toggle, dark mode, progress bar
 
-([https://nisha-siva07.github.io/mini-quiz-app/])
+## Demo
+try it ([https://nisha-siva07.github.io/mini-quiz-app/])
 
 ## 📂 Folder Structure
 - `index.html` – Login Page
